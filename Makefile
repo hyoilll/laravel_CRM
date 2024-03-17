@@ -8,6 +8,9 @@ php: # phpコンテイナーにRoot権限でログイン
 db: # mysqlコンテイナーにログイン
 	docker-compose exec mysql bash
 
+clear: # clear cache & config
+	./vendor/bin/sail php artisan cache:clear
+	./vendor/bin/sail php artisan config:clear
 
 up: # コンテイナーを起動
 	./vendor/bin/sail up -d
